@@ -1,4 +1,5 @@
 import sys
+import os
 import time
 import ais_outcomes as ais
 import cohort
@@ -18,7 +19,7 @@ those are always discreet estimates.
 SETTINGS = {
     # Options for simulation type are:
     # 1) 'Base Case' 2) 'Random Sets' 3) 'Input File'
-    'Simulation Type': 'Base Case',
+    'Simulation Type': 'Input File',
     'Probabilistic Model': {
         'on': True,
         'Random Times': True,
@@ -57,6 +58,9 @@ SETTINGS = {
     'Horizon': 'lifetime'
 }
 
+if not os.path.isdir('output'):
+    os.makedirs('output')
+
 
 def random_out_name():
     options = SETTINGS['Random Set Options']
@@ -76,7 +80,12 @@ def random_out_name():
     ]:
         time = options[time_type]
         args.append(str(time) if time is not None else time_type)
-    return 'output/random_sets/' + '-'.join(args) + '.csv'
+
+    base = os.path.join('output', 'random_sets')
+    if not os.path.isdir(base):
+        os.makedirs(base)
+
+    return os.path.join(base, '-'.join(args) + '.csv')
 
 
 OUTPUT_FILE = None
@@ -328,21 +337,12 @@ def run():
         arguments.append(SETTINGS['Base Case Options'])
     elif SETTINGS['Simulation Type'] == 'Random Sets':
         OUTPUT_FILE = open(random_out_name(), 'w')
-        # OUTPUT_FILE = open('output/random_parameter_sets.csv', 'w')
-        try:
-            from tqdm import tqdm
-            arguments = tqdm(
-                random_sets.create_random_sets(SETTINGS['Random Set Options']))
-        except ImportError:
-            arguments = random_sets.create_random_sets(
-                SETTINGS['Random Set Options'])
+        arguments = tqdm.tqdm(
+            random_sets.create_random_sets(SETTINGS['Random Set Options'])
+        )
     elif SETTINGS['Simulation Type'] == 'Input File':
         OUTPUT_FILE = open('output/input_file_scenarios.csv', 'w')
-        try:
-            from tqdm import tqdm
-            arguments = tqdm(read_input_file())
-        except ImportError:
-            arguments = read_input_file()
+        arguments = tqdm.tqdm(read_input_file())
 
     setup_output_file(OUTPUT_FILE)
     for argument_set in arguments:

@@ -1,5 +1,11 @@
+# Results files
+output/*
+
 # Because parters likes dropbox and so do we
-.dropbox 
+.dropbox
+
+# macOS junk
+.DS_Store 
 
 # Visual studio
 *.vscode
