@@ -1,0 +1,16 @@
+sex (type male or female),age,RACE (type NA if not),NIHSS (type NA if not),time symptom,time primary,time comprehensive,transfer time
+female,70,3,NA,30,31,53,62
+female,70,5,NA,30,31,53,62
+female,70,3,NA,70,31,53,62
+female,70,5,NA,70,31,53,62
+male,80,4,NA,45,14,59,60
+male,80,6,NA,45,14,59,60
+male,80,4,NA,90,14,59,60
+male,80,6,NA,90,14,59,60
+female,65,3,NA,10,37,91,117
+female,65,3,NA,70,37,91,117
+female,65,8,NA,10,37,91,117
+female,65,8,NA,70,37,91,117
+female,70,NA,6,30,31.15,47.7,26.95
+female,70,NA,10,30,31.15,47.7,26.95
+female,70,NA,14,30,31.15,47.7,26.95
