@@ -6,7 +6,7 @@ This code is provided as supplementary material to our submission of:
 
 Our work is licensed with an MIT license and we welcome contributions, suggestions, and feedback.
 
-Code was written and is maintained by Ali A and Eschenfeldt PC.
+Code was written and is maintained by Ayman Ali and Patrick Eschenfeldt.
 
 For a more user-friendly interaction with the model, please visit the following website:
 
