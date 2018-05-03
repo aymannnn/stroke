@@ -10,7 +10,7 @@ Code was written and is maintained by Ayman Ali and Patrick Eschenfeldt.
 
 For a more user-friendly interaction with the model, please visit the following website:
 
-(placeholder...)
+http://stroketransport.mgh-ita.org
 
 ---
 
