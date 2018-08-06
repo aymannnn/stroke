@@ -4,7 +4,7 @@ This code is provided as supplementary material to our submission of:
 
 *Ali A, Zachrison KS, Eschenfeldt PC, Schwamm LH, Hur C*
 
-Our work is licensed with an MIT license and we welcome contributions, suggestions, and feedback.
+Our work is licensed with an MIT license and we welcome contributions, suggestions, and feedback. In addition, it has been accepted for publication in *Stroke*, a peer-reviewed journal of the American Heart Association.
 
 Code was written and is maintained by Ayman Ali and Patrick Eschenfeldt.
 
